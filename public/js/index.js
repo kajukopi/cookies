@@ -1,17 +1,5 @@
 ;(async ([Loading, Notif]) => {
-  ;(async () => {
-    const response = await fetch("/status", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Charset: "UTF-8",
-      },
-    })
-    const result = await response.json()
-    console.log(response)
-    console.log(result)
-    Loading.hide()
-  })()
+  Loading.hide()
 
   // Sign In
   const buttonSignIn = document.querySelector("#buttonSignIn")
