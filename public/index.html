@@ -8,87 +8,55 @@
     <link rel="stylesheet" href="../../css/core.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
-      /* .swiper {
-        width: 600px;
-        height: 300px;
-      } */
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     </style>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
-      <!-- Container wrapper -->
-      <div class="container-fluid">
-        <!-- Navbar brand -->
-        <a class="navbar-brand" href="#">Brand</a>
-
-        <!-- Toggle button -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-mdb-toggle="collapse"
-          data-mdb-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <!-- Link -->
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Container wrapper -->
-    </nav>
-    <!-- Navbar -->
-    <!-- Slider main container -->
-    <div class="swiper my-5">
-      <!-- Additional required wrapper -->
+    <!-- Swiper -->
+    <div class="swiper">
       <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide" data-history="1">
-          <div class="container-fluid my-5">
-            <button type="button" class="btn btn-primary" id="buttonSignIn">SIGN IN</button>
-            <button type="button" class="btn btn-primary" id="buttonSignOut">SIGN OUT</button>
-            <button type="button" class="btn btn-primary" id="buttonProfile">PROFILE</button>
-          </div>
-        </div>
-        <div class="swiper-slide" data-history="2">
-          <div class="container-fluid my-5">
-            <button type="button" class="btn btn-primary" id="buttonApiGet">API GET</button>
-            <button type="button" class="btn btn-primary" id="buttonApiPost">API POST</button>
-          </div>
-        </div>
-        <div class="swiper-slide" data-history="3">
-          <div class="container-fluid my-5">
-            <div class="input-group my-3">
-              <input id="inputApiUpdate" type="text" class="form-control" placeholder="id" aria-label="API Update by id" aria-describedby="buttonApiUpdate" />
-              <button class="btn btn-outline-primary" type="button" id="buttonApiUpdate" data-mdb-ripple-init data-mdb-ripple-color="dark">Update</button>
-            </div>
-
-            <div class="input-group my-3">
-              <input id="inputApiDelete" type="text" class="form-control" placeholder="id" aria-label="API Delete by id" aria-describedby="buttonApiDelete" />
-              <button class="btn btn-outline-danger" type="button" id="buttonApiDelete" data-mdb-ripple-init data-mdb-ripple-color="dark">Delete</button>
-            </div>
-          </div>
-        </div>
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
       </div>
-      <!-- If we need pagination -->
-      <!-- <div class="swiper-pagination"></div> -->
-
-      <!-- If we need navigation buttons -->
-      <!-- <div class="swiper-button-prev"></div> -->
-      <!-- <div class="swiper-button-next"></div> -->
-
-      <!-- If we need scrollbar -->
-      <!-- <div class="swiper-scrollbar"></div> -->
     </div>
   </body>
   <!-- Toast Alert -->
@@ -122,9 +90,6 @@
       direction: "horizontal",
       loop: false,
       allowTouchMove: true,
-      history: {
-        key: "",
-      },
     })
   </script>
 </html>
