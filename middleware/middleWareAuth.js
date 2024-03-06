@@ -29,9 +29,9 @@ exports.middleWareAuth = async (req, res, next) => {
             if (!match) throw "auth/post/signin: invalid!"
             if (req.cookies["session.auth"] === find.toObject().id) throw {text: "already login!", path: "auth/post/signin"}
             res.cookie("session.auth", await bcrypt.hash(req.cookies["session.sid"], saltRounds), {
-              maxAge: 24 * 60 * 60 * 1000,
+              maxAge: /* 24 * 60 *  */60 * 1000,
               path: "/",
-              httpOnly: true,
+              // httpOnly: false,
               secure: true,
             })
             res.json({status: true, context: [deleteCrutial(find.toObject())], message: {text: "successfully sign-in!", path: "auth/post/signin"}}).end()

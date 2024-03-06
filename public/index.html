@@ -4,28 +4,92 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cookies</title>
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/core.min.css" />
+    <link rel="stylesheet" href="../../css/all.min.css" />
+    <link rel="stylesheet" href="../../css/core.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+      /* .swiper {
+        width: 600px;
+        height: 300px;
+      } */
+    </style>
   </head>
   <body>
-    <section class="container-fluid my-5">
-      <button type="button" class="btn btn-primary" id="buttonSignIn">SIGN IN</button>
-      <button type="button" class="btn btn-primary" id="buttonSignOut">SIGN OUT</button>
-      <button type="button" class="btn btn-primary" id="buttonProfile">PROFILE</button>
-      <hr />
-      <button type="button" class="btn btn-primary" id="buttonApiGet">API GET</button>
-      <button type="button" class="btn btn-primary" id="buttonApiPost">API POST</button>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">Brand</a>
 
-      <div class="input-group my-3">
-        <input id="inputApiUpdate" type="text" class="form-control" placeholder="id" aria-label="API Update by id" aria-describedby="buttonApiUpdate" />
-        <button class="btn btn-outline-primary" type="button" id="buttonApiUpdate" data-mdb-ripple-init data-mdb-ripple-color="dark">Update</button>
-      </div>
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
 
-      <div class="input-group my-3">
-        <input id="inputApiDelete" type="text" class="form-control" placeholder="id" aria-label="API Delete by id" aria-describedby="buttonApiDelete" />
-        <button class="btn btn-outline-danger" type="button" id="buttonApiDelete" data-mdb-ripple-init data-mdb-ripple-color="dark">Delete</button>
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- Link -->
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </section>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+    <!-- Slider main container -->
+    <div class="swiper my-5">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide" data-history="1">
+          <div class="container-fluid my-5">
+            <button type="button" class="btn btn-primary" id="buttonSignIn">SIGN IN</button>
+            <button type="button" class="btn btn-primary" id="buttonSignOut">SIGN OUT</button>
+            <button type="button" class="btn btn-primary" id="buttonProfile">PROFILE</button>
+          </div>
+        </div>
+        <div class="swiper-slide" data-history="2">
+          <div class="container-fluid my-5">
+            <button type="button" class="btn btn-primary" id="buttonApiGet">API GET</button>
+            <button type="button" class="btn btn-primary" id="buttonApiPost">API POST</button>
+          </div>
+        </div>
+        <div class="swiper-slide" data-history="3">
+          <div class="container-fluid my-5">
+            <div class="input-group my-3">
+              <input id="inputApiUpdate" type="text" class="form-control" placeholder="id" aria-label="API Update by id" aria-describedby="buttonApiUpdate" />
+              <button class="btn btn-outline-primary" type="button" id="buttonApiUpdate" data-mdb-ripple-init data-mdb-ripple-color="dark">Update</button>
+            </div>
+
+            <div class="input-group my-3">
+              <input id="inputApiDelete" type="text" class="form-control" placeholder="id" aria-label="API Delete by id" aria-describedby="buttonApiDelete" />
+              <button class="btn btn-outline-danger" type="button" id="buttonApiDelete" data-mdb-ripple-init data-mdb-ripple-color="dark">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <!-- <div class="swiper-pagination"></div> -->
+
+      <!-- If we need navigation buttons -->
+      <!-- <div class="swiper-button-prev"></div> -->
+      <!-- <div class="swiper-button-next"></div> -->
+
+      <!-- If we need scrollbar -->
+      <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
   </body>
   <!-- Toast Alert -->
   <div class="toast" id="placement-example-toast" role="alert" aria-live="assertive" aria-atomic="true" data-mdb-toast-init data-mdb-autohide="false">
@@ -45,8 +109,22 @@
       </h3>
     </div>
   </div>
-  <script src="js/core.min.js" type="text/javascript"></script>
-  <script src="js/module.min.js" type="text/javascript"></script>
-  <script src="js/scripts.min.js" type="text/javascript"></script>
-  <script src="js/index.js" type="text/javascript"></script>
+  <script src="../../js/core.min.js" type="text/javascript"></script>
+  <script src="../../js/module.min.js" type="text/javascript"></script>
+  <script src="../../js/scripts.min.js" type="text/javascript"></script>
+  <script src="../../js/index.js" type="text/javascript"></script>
+
+  <script type="module">
+    import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs"
+
+    const swiper = new Swiper(".swiper", {
+      // Optional parameters
+      direction: "horizontal",
+      loop: false,
+      allowTouchMove: true,
+      history: {
+        key: "",
+      },
+    })
+  </script>
 </html>

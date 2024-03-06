@@ -36,6 +36,12 @@ doc.loadInfo().then(() => {
 
   app.use("/auth", require("./router/auth"))
 
+  app.use("/status", require("./router/status"))
+
+  app.use("*", (req, res) => {
+    res.sendFile(__dirname + "/public/index.html")
+  })
+
   app.listen(3000, () => {
     console.log("Server online!")
   })
