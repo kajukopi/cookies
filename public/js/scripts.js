@@ -19,7 +19,7 @@ this.instance = mdb.Toast.getInstance(document.getElementById("placement-example
       !arg.status
         ? instance.update({color: "danger", stacking: true, hidden: true, width: "375px", position: "top-right", autohide: true, delay: 3000})
         : instance.update({color: "success", stacking: true, hidden: true, width: "375px", position: "top-right", autohide: true, delay: 3000})
-      document.getElementById("placement-example-toast").children[1].textContent = arg.message.text
+      document.getElementById("placement-example-toast").querySelector(".toast-body").textContent = arg.message.text
       instance.show()
     },
     hide: () => {

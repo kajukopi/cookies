@@ -1,8 +1,8 @@
 {
   "name": "cookies",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Karim Roy Tampubolon",
+  "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js"
   },
