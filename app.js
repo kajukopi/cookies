@@ -36,7 +36,7 @@ doc.loadInfo().then(() => {
 
   app.use("/auth", require("./router/auth"))
 
-  app.listen(80, () => {
+  app.listen(3000, () => {
     console.log("Server online!")
   })
 })
