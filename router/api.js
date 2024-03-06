@@ -1,4 +1,4 @@
-const {middleWareRouter} = require("./middleWareRouter")
+const {middleWareRouter} = require("../middleware/middleWareRouter")
 
 const router = require("express").Router()
 

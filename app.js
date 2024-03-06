@@ -2,8 +2,8 @@ require("dotenv").config()
 const express = require("express")
 const cookieParser = require("cookie-parser")
 const cors = require("cors")
-const {doc, drive} = require("./google")
-const {sessions} = require("./middleWareSession")
+const {doc, drive} = require("./google/google")
+const {sessions} = require("./middleware/middleWareSession")
 const app = express()
 
 app.use(cors("*"))
@@ -32,9 +32,9 @@ doc.loadInfo().then(() => {
 
   app.use(sessions)
 
-  app.use("/api", require("./api"))
+  app.use("/api", require("./router/api"))
 
-  app.use("/auth", require("./auth"))
+  app.use("/auth", require("./router/auth"))
 
   app.listen(80, () => {
     console.log("Server online!")
