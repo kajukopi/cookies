@@ -41,21 +41,34 @@
         height: 100%;
         object-fit: cover;
       }
+
+      .card {
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body>
     <!-- Swiper -->
     <div class="swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
+        <div data-hash="signin" class="swiper-slide">
+          <div class="card">
+            <div class="card-header">
+              <h1>This is title</h1>
+            </div>
+            <div class="card-body overflow-auto">
+              <h5 style="height: 2000px">This is body</h5>
+            </div>
+            <div class="card-footer">
+              <h3>This is footer</h3>
+            </div>
+          </div>
+        </div>
+        <div data-hash="singup" class="swiper-slide">signup</div>
+        <div data-hash="signout" class="swiper-slide">singout</div>
+        <div data-hash="dashboard" class="swiper-slide">dashboard</div>
+        <div data-hash="product" class="swiper-slide">product</div>
       </div>
     </div>
   </body>
@@ -90,6 +103,14 @@
       direction: "horizontal",
       loop: false,
       allowTouchMove: true,
+      hashNavigation: {
+        watchState: true,
+      },
     })
+    const overFlow = document.querySelectorAll(".overflow-auto")
+    if (overFlow)
+      overFlow.forEach((scroll) => {
+        new mdb.PerfectScrollbar(scroll)
+      })
   </script>
 </html>
