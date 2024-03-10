@@ -4,7 +4,7 @@
   "description": "Karim Roy Tampubolon",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js -e js,html"
   },
   "keywords": [],
   "author": "",

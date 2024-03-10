@@ -1,4 +1,44 @@
 ;(async ([Loading, Notif]) => {
+  const swiper = new Swiper(".swiper", {
+    // Optional parameters
+    direction: "horizontal",
+    loop: false,
+    allowTouchMove: false,
+    hashNavigation: {
+      watchState: true,
+    },
+    effect: "fade",
+    on: {
+      init: async function () {
+        await check()
+      },
+      slideChange: async () => {
+        await check()
+      },
+    },
+  })
+  async function check() {
+    const response = await fetch("/status", {
+      method: "GET",
+      headers: {
+        "Content-Type": ".application/json",
+        Charset: "UTF-8",
+      },
+    })
+    const result = await response.json()
+    const restricted = ["#signin", "#signup", ""]
+    const unrestricted = ["#dashboard", "#signout"]
+    if (result.status === true) {
+      if (!unrestricted.includes(location.hash)) location.hash = "#dashboard"
+    } else {
+      if (!restricted.includes(location.hash)) location.hash = "#signin"
+    }
+  }
+  const overFlow = document.querySelectorAll(".overflow-auto")
+  if (overFlow)
+    overFlow.forEach((scroll) => {
+      new mdb.PerfectScrollbar(scroll)
+    })
   Loading.hide()
 
   // Sign In
@@ -45,6 +85,7 @@
       Loading.hide()
       Notif(instance).show(result)
       console.log("Result : ", result)
+      location.hash = "#signin"
     })
 
   // Profile
@@ -159,5 +200,51 @@
       Loading.hide()
       Notif(instance).show(result)
       console.log("Result : ", result)
+    })
+
+  const formSignIn = document.querySelector("#form-signin")
+  if (formSignIn)
+    formSignIn.addEventListener("submit", async (e) => {
+      e.preventDefault()
+      const formData = new FormData(e.target)
+      const data = Object.fromEntries(formData)
+      Loading.show()
+      console.log("Sending data...")
+      const response = await fetch("/auth?col=users&signin=true", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Charset: "UTF-8",
+        },
+        body: JSON.stringify(data),
+      })
+      const result = await response.json()
+      Loading.hide()
+      Notif(instance).show(result)
+      console.log("Result : ", result)
+      await check()
+    })
+
+  const formSignUp = document.querySelector("#form-signup")
+  if (formSignUp)
+    formSignUp.addEventListener("submit", async (e) => {
+      e.preventDefault()
+      const formData = new FormData(e.target)
+      const data = Object.fromEntries(formData)
+      Loading.show()
+      console.log("Sending data...")
+      const response = await fetch("/auth?col=users&signup=true", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Charset: "UTF-8",
+        },
+        body: JSON.stringify(data),
+      })
+      const result = await response.json()
+      Loading.hide()
+      Notif(instance).show(result)
+      console.log("Result : ", result)
+      await check()
     })
 })([this.Loading, this.Notif])
