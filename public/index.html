@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -74,6 +74,85 @@
     <!-- Swiper -->
     <div class="swiper">
       <div class="swiper-wrapper">
+        <div data-hash="home" class="swiper-slide">
+          <div class="card border-1 shadow-0">
+            <div class="card-header d-flex justify-content-end align-items-center">
+              <h5></h5>
+              <div class="input-group">
+                <div class="form-outline" data-mdb-input-init>
+                  <input type="search" id="form1" class="form-control" />
+                  <label class="form-label" for="form1">Cari lowongan</label>
+                </div>
+                <button type="button" class="btn btn-primary" data-mdb-ripple-init>
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body overflow-auto">
+              <div style="height: 2000px">
+                <div class="row g-4">
+                  <div class="col-sm-4">
+                    <div class="card text-center border border-primary shadow-0">
+                      <div class="card-header h5 fw-bold">Admin Support</div>
+                      <div class="card-body">
+                        <h5 class="card-title">PT Vektordaya Mekatrika</h5>
+                        <ul class="list-unstyled text-start small">
+                          <li class="mb-1"><i class="fa-solid fa-location-dot me-2 text-muted"></i>Bandung, Jawa Barat</li>
+                          <li class="mb-1"><i class="fa-solid fa-building me-2 text-muted"></i>Asisten Administratif (Administrasi & Dukungan Perkantoran)</li>
+                          <li class="mb-1"><i class="fa-solid fa-clock me-2 text-muted"></i>Full time</li>
+                        </ul>
+                      </div>
+                      <div class="card-footer">
+                        <a href="#lamaran" type="button" class="btn btn-primary">Lamaran Cepat</a>
+                        <a href="#simpan" type="button" class="btn btn-secondary">Simpan</a>
+                        Diposting 2 jam yang lalu
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="card text-center border border-primary shadow-0">
+                      <div class="card-header h5 fw-bold">Greeter Administration</div>
+                      <div class="card-body">
+                        <h5 class="card-title">PT I Like Gym Indonesia</h5>
+                        <ul class="list-unstyled text-start small">
+                          <li class="mb-1"><i class="fa-solid fa-location-dot me-2 text-muted"></i>Jakarta Raya</li>
+                          <li class="mb-1"><i class="fa-solid fa-building me-2 text-muted"></i>Asisten Administratif (Administrasi & Dukungan Perkantoran)</li>
+                          <li class="mb-1"><i class="fa-solid fa-clock me-2 text-muted"></i>Full time</li>
+                        </ul>
+                      </div>
+                      <div class="card-footer">
+                        <a href="#lamaran" type="button" class="btn btn-primary">Lamaran Cepat</a>
+                        <a href="#simpan" type="button" class="btn btn-secondary">Simpan</a>
+                        Diposting 4 jam yang lalu
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="card text-center border border-primary shadow-0">
+                      <div class="card-header h5 fw-bold">Research & Development (Trial & Regulatory) Staff</div>
+                      <div class="card-body">
+                        <h5 class="card-title">PT Tirta Alam Segar</h5>
+                        <ul class="list-unstyled text-start small">
+                          <li class="mb-1"><i class="fa-solid fa-location-dot me-2 text-muted"></i>Cikarang Barat, Jawa Barat</li>
+                          <li class="mb-1"><i class="fa-solid fa-building me-2 text-muted"></i>Teknologi & Keamanan Pangan (Sains & Teknologi)</li>
+                          <li class="mb-1"><i class="fa-solid fa-clock me-2 text-muted"></i>Full time</li>
+                        </ul>
+                      </div>
+                      <div class="card-footer">
+                        <a href="#lamaran" type="button" class="btn btn-primary">Lamaran Cepat</a>
+                        <a href="#simpan" type="button" class="btn btn-secondary">Simpan</a>
+                        Diposting 1 hari yang lalu
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <small>Votree 2024</small>
+            </div>
+          </div>
+        </div>
         <div data-hash="signin" class="swiper-slide">
           <div class="card border-1 shadow-0">
             <div class="card-header">
@@ -264,9 +343,25 @@
               </a>
             </div>
             <div class="card-body overflow-auto">
-              <div style="height: 2000px">
-
-              </div>
+              <div style="height: 2000px"></div>
+            </div>
+            <div class="card-footer">
+              <small>Votree 2024</small>
+            </div>
+          </div>
+        </div>
+        <div data-hash="lamaran" class="swiper-slide">
+          <div class="card border-1 shadow-0">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <a href="#dashboard" class="text-muted">
+                <i class="fa-solid fa-house fa-lg"></i>
+              </a>
+              <a href="#signout" class="text-muted">
+                <i class="fa-solid fa-right-from-bracket fa-lg"></i>
+              </a>
+            </div>
+            <div class="card-body overflow-auto">
+              <div style="height: 2000px"></div>
             </div>
             <div class="card-footer">
               <small>Votree 2024</small>
@@ -294,10 +389,29 @@
       </h3>
     </div>
   </div>
+  <style>
+    dialog {
+      animation: fade-in 0.7s ease-in;
+    }
+  </style>
+  <dialog>
+    <h3>Hello world</h3>
+
+    <details>
+      <summary>System Requirements</summary>
+      <p>
+        Requires a computer running an operating system. The computer must have some memory and ideally some kind of long-term storage. An input device as well as some form of
+        output device is recommended.
+      </p>
+    </details>
+    <button class="btn btn-primary" id="btn-close" autofocus lang="id" >close</button>
+
+
+    
+  </dialog>
   <script src="../../js/core.min.js" type="text/javascript"></script>
   <script src="../../js/module.min.js" type="text/javascript"></script>
   <script src="../../js/scripts.min.js" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" type="text/javascript"></script>
   <script src="../../js/index.min.js" type="text/javascript"></script>
-
 </html>

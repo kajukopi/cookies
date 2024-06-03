@@ -17,6 +17,7 @@
       },
     },
   })
+
   async function check() {
     const response = await fetch("/status", {
       method: "GET",
@@ -26,11 +27,13 @@
       },
     })
     const result = await response.json()
-    const restricted = ["#signin", "#signup", ""]
+    const restricted = ["#signin", "#signup"]
     const unrestricted = ["#dashboard", "#signout"]
     if (result.status === true) {
+      if (location.hash === "#home" || location.hash === "") return
       if (!unrestricted.includes(location.hash)) location.hash = "#dashboard"
     } else {
+      if (location.hash === "#home" || location.hash === "") return
       if (!restricted.includes(location.hash)) location.hash = "#signin"
     }
   }
@@ -248,3 +251,8 @@
       await check()
     })
 })([this.Loading, this.Notif])
+
+document.querySelector("dialog").showModal()
+document.querySelector("#btn-close").addEventListener("click", (e) => {
+  document.querySelector("dialog").close()
+})
