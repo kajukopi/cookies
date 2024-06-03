@@ -42,7 +42,7 @@ doc.loadInfo().then(() => {
     res.sendFile(__dirname + "/public/index.html")
   })
 
-  app.listen(3000, () => {
+  app.listen(process.env.PORT || 4000, () => {
     console.log("Server online!")
   })
 })
